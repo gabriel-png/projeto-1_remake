@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development"
+    "dev": "webpack-dev-server --mode development"
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +17,8 @@
     "react-dom": "^16.8.6",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.7.2"
   }
 }
