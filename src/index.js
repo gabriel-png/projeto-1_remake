@@ -1,36 +1,25 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 
-class Button extends Component {
-    static defaultProps = {
-        children: 'Guardar',
-    };
-    
-    static propTypes = {
-        onClick: PropTypes.func.isRequired,
-        children: PropTypes.string,
-    };
+import Button from './Button';
 
-    render() {
-        return (
-        <a href="" onClick={this.props.onClick}>
-         {this.props.children}
-        </a>
-        );
-    }
-}
+import './style.scss';
 
 class App extends Component {
-    handleClick(){
-        alert("Opa, tudo salvo");
+    state = {
+        counter: 0,
+    }
+
+    handleClick = () => {
+       this.setState({ counter: this.state.counter + 1 })
     }
 
     render() {
         return (
         <Fragment>
-         <h1>Eae Seus Marvado, Tudo Emriba?</h1> 
-         <Button onClick={this.handleClick}>Bora Guardar Esse Progresso</Button>
+         <h1>Eae Seus Marvado, Tudo Emriba?</h1>
+         <h2>{this.state.counter}</h2> 
+         <Button onClick={this.handleClick}>Bota mais um ai</Button>
         </Fragment> 
         );
     }
